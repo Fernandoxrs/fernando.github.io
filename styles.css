@@ -45,6 +45,7 @@ section h2 {
   margin-bottom: 1.5rem;
 }
 
+/* Contenido de la lista */
 .content ul {
   list-style-type: none;
   padding: 0;
@@ -59,20 +60,18 @@ section h2 {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content ul li::before {
+  content: '\1F4CC'; /* Icono de marcador */
+  margin-right: 10px;
+  font-size: 1.5rem;
 }
 
 .content ul li strong {
   color: #bb86fc;
-}
-
-/* Entrevistas */
-.interviews h3 {
-  color: #bb86fc;
-  margin-top: 1.5rem;
-}
-
-.interviews p {
-  margin: 0.8rem 0;
 }
 
 /* Formulario */
@@ -92,7 +91,8 @@ form {
   margin-bottom: 0.5rem;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   padding: 0.8rem;
   border: 1px solid #444;
   border-radius: 6px;
@@ -129,43 +129,5 @@ footer {
 footer p {
   margin: 0;
   font-size: 0.9rem;
-}
-
-/* Iconos y animaciones adicionales */
-.icon {
-  font-size: 1.2rem;
-  color: #bb86fc;
-  transition: color 0.3s ease;
-}
-
-.icon:hover {
-  color: #03dac6;
-}
-
-/* Ejemplo de animación para listas */
-.content ul li {
-  position: relative;
-  overflow: hidden;
-}
-
-.content ul li::before {
-  content: '\1F4CC'; /* Icono de marcador */
-  margin-right: 10px;
-  font-size: 1.5rem;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section {
-  animation: fadeIn 0.6s ease;
 }
 
