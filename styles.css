@@ -1,147 +1,171 @@
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+header {
+  background: #1f1f1f;
+  color: #bb86fc;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Secciones */
+section {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  background: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+  font-size: 2.2rem;
+  color: #bb86fc;
+  border-bottom: 2px solid #bb86fc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content ul li {
+  background: #272727;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 6px;
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content ul li strong {
+  color: #bb86fc;
+}
+
+/* Entrevistas */
+.interviews h3 {
+  color: #bb86fc;
+  margin-top: 1.5rem;
+}
+
+.interviews p {
+  margin: 0.8rem 0;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #272727;
+  color: #e0e0e0;
+}
+
+button {
+  background: #bb86fc;
+  color: #121212;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: #3700b3;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1f1f1f;
+  color: #bb86fc;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Iconos y animaciones adicionales */
+.icon {
+  font-size: 1.2rem;
+  color: #bb86fc;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #03dac6;
+}
+
+/* Ejemplo de animación para listas */
+.content ul li {
+  position: relative;
+  overflow: hidden;
+}
+
+.content ul li::before {
+  content: '\1F4CC'; /* Icono de marcador */
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #ff6f61, #ff9e7e);
-    color: #fff;
-    line-height: 1.6;
-    padding-top: 50px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  header {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-  }
-  
-  section {
-    margin: 30px auto;
-    padding: 20px;
-    max-width: 1200px;
-    background-color: #34495e;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  h2 {
-    color: #e74c3c;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  ul li {
-    background-color: #ecf0f1;
-    margin: 10px 0;
-    padding: 10px;
-    border-left: 4px solid #e74c3c;
-    transition: background-color 0.3s ease, padding-left 0.3s ease;
-  }
-  
-  ul li:hover {
-    background-color: #e74c3c;
-    color: white;
-    padding-left: 20px;
-  }
-  
-  .content {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-  }
-  
-  .sticker {
-    font-size: 3rem;
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    transform: rotate(-10deg);
-    opacity: 0.8;
-    animation: stickerAnimation 3s infinite;
-  }
-  
-  @keyframes stickerAnimation {
-    0% {
-      transform: rotate(-10deg);
-    }
-    50% {
-      transform: rotate(10deg);
-    }
-    100% {
-      transform: rotate(-10deg);
-    }
-  }
-  
-  /* Estilo para las entrevistas */
-  .interviews {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .interviews h3 {
-    color: #34495e;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .interviews p {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    margin-bottom: 15px;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #34495e;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    body {
-      padding-top: 20px;
-    }
-  
-    header h1 {
-      font-size: 2rem;
-    }
-  
-    section {
-      margin: 15px;
-      padding: 15px;
-    }
-  
-    h2 {
-      font-size: 1.6rem;
-    }
-  
-    .content {
-      font-size: 1rem;
-    }
-  }
-  
+}
+
+section {
+  animation: fadeIn 0.6s ease;
+}
+
